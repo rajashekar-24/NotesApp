@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Notes</a>
+
+  <div class="collapse navbar-collapse pointer" id="navbar">
+    <ul class="navbar-nav mt-2 ml-auto mt-lg-0">
+      <li class="nav-item active pointer" (click)="addNote()">
+        <a class="nav-link"><i class="fa fa-plus-square-o fa-lg mt-2 mx-3"></i></a>
+      </li>
+      <li class="nav-item active pointer" (click)="deleteNote()">
+        <a class="nav-link"><i class="fa fa-trash fa-lg mt-2 mx-3"></i></a>
+      </li>
+
+    </ul>
+    <form class="form-inline ml-auto my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+        (keyup)="search($event.target.value)">
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,24 @@
+<div id="sidebar" class="sidebar bg-light">
+  <a class="closebtn text-dark pointer" (click)="closeNav()" *ngIf="notes.length>0">×</a>
+
+  <ul class="list-group  text-dark">
+
+    <div *ngFor="let note of notes;let i = index ">
+
+      <li class="list-group-item pointer" *ngIf="note" [ngClass]="{ 'active': index === i}" (click)="onSelect(note,i);">
+        {{note.text}} &nbsp; &nbsp;
+        <small>{{note.timestamp | date: 'short'}}</small></li>
+      <hr *ngIf="note">
+
+    </div>
+    <div *ngIf="filterMessage && notes.length === 0">
+      <p>
+        <h5 class="text-center">No records found...</h5>
+    </div>
+  </ul>
+
+</div>
+
+<div id="menu">
+  <button *ngIf="navbar" class="openbtn" (click)="openNav()">☰ Notes</button>
+</div>
